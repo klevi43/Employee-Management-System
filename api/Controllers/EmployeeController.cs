@@ -36,7 +36,16 @@ namespace api.Controllers
             return Ok(employeeModel.ToEmployeeDto());
         }
 
-        
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteById(int id)
+        {
+            var employeeModel = await _employeeRepository.DeleteById(id);
+            if (employeeModel == null)
+            {
+                return NotFound();
+            }
+            return NoContent();
+        }
     }
 
 }

@@ -18,7 +18,14 @@ namespace api.Repositories
 
         public async Task<Employee?> DeleteById(int id)
         {
-            throw new NotImplementedException();
+             var employee = await _context.Employees.FirstOrDefaultAsync(e => e.Id == id);
+            if (employee == null)
+            {
+                return null;
+            }
+            _context.Remove(employee);
+            await _context.SaveChangesAsync();
+            return employee;
         }
 
         public async Task<List<Employee>> GetAllAsync()
@@ -43,7 +50,7 @@ namespace api.Repositories
 
         public async Task<Employee?> UpdateAsync(int id, Employee entity)
         {
-            throw new NotImplementedException();
+           throw new NotImplementedException();
         }
     }
 }
