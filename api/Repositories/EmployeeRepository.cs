@@ -28,7 +28,7 @@ namespace api.Repositories
                     LastName = e.LastName,
                     StartDate = e.StartDate,
                     EndDate = e.EndDate,
-                    DepartmentName = e.Department.Name
+                    DepartmentId = e.Department.Id
                 }).ToListAsync();
         }
         

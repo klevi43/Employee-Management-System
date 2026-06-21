@@ -1,4 +1,5 @@
 
+using api.Dtos;
 using api.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,7 +7,7 @@ namespace api.Controllers
 {
     [Route("api/employees")]
     [ApiController]
-    public class EmployeeController :ControllerBase
+    public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeRepository _employeeRepository;
         public EmployeeController(IEmployeeRepository employeeRepository)
@@ -20,6 +21,8 @@ namespace api.Controllers
             var employees = await _employeeRepository.GetAllAsync();
             return Ok(employees);
         }
+
+        
     }
 
 }
