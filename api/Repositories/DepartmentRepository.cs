@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api.Repositories
 {
-    public class DepartmentRepository : IDepartmentRepository
+    public class DepartmentRepository : IRepository<Department>
     {   
         private readonly ApplicationDBContext _context;
         public DepartmentRepository(ApplicationDBContext context)
@@ -31,7 +31,7 @@ namespace api.Repositories
         // sounds a lot like a promise
         public async Task<List<Department>> GetAllAsync()
         {
-            return await _context.Departments.ToListAsync();
+            return await _context.Departments.Include(d => d.Employees).ToListAsync();
         }
 
         public async Task<Department?> GetByIdAsync(int id)

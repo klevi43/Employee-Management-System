@@ -1,6 +1,7 @@
 
 using api.Data;
 using api.Interfaces;
+using api.Models;
 using api.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,8 +16,8 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
-builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IRepository<Department>, DepartmentRepository>();
+builder.Services.AddScoped<IRepository<Employee>, EmployeeRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

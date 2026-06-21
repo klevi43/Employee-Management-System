@@ -1,6 +1,7 @@
 using api.Dtos;
 using api.Interfaces;
 using api.Mappers;
+using api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
 
@@ -10,8 +11,8 @@ namespace api.Controllers
     [ApiController]
     public class DepartmentController : ControllerBase
     {
-        private readonly IDepartmentRepository _departmentRepository;
-        public DepartmentController(IDepartmentRepository departmentRepository)
+        private readonly IRepository<Department> _departmentRepository;
+        public DepartmentController(IRepository<Department> departmentRepository)
         {
             _departmentRepository = departmentRepository;
         }

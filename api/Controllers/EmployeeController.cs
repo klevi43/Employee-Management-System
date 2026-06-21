@@ -1,6 +1,8 @@
 
 using api.Dtos;
 using api.Interfaces;
+using api.Mappers;
+using api.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
@@ -9,8 +11,8 @@ namespace api.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private readonly IEmployeeRepository _employeeRepository;
-        public EmployeeController(IEmployeeRepository employeeRepository)
+        private readonly IRepository<Employee> _employeeRepository;
+        public EmployeeController(IRepository<Employee> employeeRepository)
         {
             _employeeRepository = employeeRepository;
         }
@@ -20,6 +22,18 @@ namespace api.Controllers
         {
             var employees = await _employeeRepository.GetAllAsync();
             return Ok(employees);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var employeeModel = await _employeeRepository.GetByIdAsync(id);
+            //Console.WriteLine(employeeModel);
+            if (employeeModel == null)
+            {
+                return NotFound();
+            }
+            return Ok(employeeModel.ToEmployeeDto());
         }
 
         
