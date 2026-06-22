@@ -19,7 +19,7 @@ This is a RestAPI made to perform CRUD operations on two entities: Employees and
 
 Get all employees
 
-**Response** --- `200 Ok`
+**Response** `200 Ok`
 
 ```json
 [
@@ -39,7 +39,7 @@ Get all employees
 
 Gets a single employee from the database
 
-**Response** --- `200 Ok`
+**Response** `200 Ok`
 
 ```json
 {
@@ -68,7 +68,7 @@ Add a new employee
 }
 ```
 
-**Response** --- `201 Created`
+**Response** `201 Created`
 
 ```json
 {
@@ -97,7 +97,7 @@ Update an existing employee's information
 }
 ```
 
-**Response** --- `200 Ok`
+**Response** `200 Ok`
 
 ```json
 {
@@ -114,7 +114,7 @@ Update an existing employee's information
 
 Delete an existing employee
 
-**Response** --- `204 No Content`
+**Response** `204 No Content`
 
 ## Departments
 
@@ -122,7 +122,7 @@ Delete an existing employee
 
 Gets all departments from the database
 
-**Response** --- `200 Ok`
+**Response** `200 Ok`
 
 ```json
 [
@@ -149,7 +149,7 @@ Gets all departments from the database
 
 Gets a single department from the database
 
-**Response** --- `200 Ok`
+**Response** `200 Ok`
 
 ```json
 [
@@ -185,7 +185,7 @@ Add a new departments
 }
 ```
 
-**Response** --- `201 Created`
+**Response** `201 Created`
 
 ```json
 [
@@ -221,7 +221,7 @@ Update an existing department's information
 }
 ```
 
-**Response** --- `200 Ok`
+**Response** `200 Ok`
 
 ```json
 {
@@ -245,4 +245,4 @@ Update an existing department's information
 
 Delete an existing department
 
-**Response** --- `204 No Content`
+**Response** `204 No Content`
