@@ -18,7 +18,7 @@ This is a RestAPI made to perform CRUD operations on two entities: Employees and
 ### GET /api/employees
 
 Get all employees
-**Response** 200 Ok
+**Response** --- 200 Ok
 
 ```json
 [
@@ -38,7 +38,7 @@ Get all employees
 
 Gets a single employee from the database
 
-**Response** 200 Ok
+**Response** --- 200 Ok
 
 ```json
 {
@@ -54,6 +54,7 @@ Gets a single employee from the database
 ### POST /api/employees
 
 Add a new employee
+
 **Request Body**
 
 ```json
@@ -66,7 +67,7 @@ Add a new employee
 }
 ```
 
-**Response** 201 Created
+**Response** --- 201 Created
 
 ```json
 {
@@ -82,6 +83,7 @@ Add a new employee
 ### PUT /api/employees/{id}
 
 Update an existing employee's information
+
 **Request Body**
 
 ```json
@@ -94,7 +96,7 @@ Update an existing employee's information
 }
 ```
 
-**Response** 200 Ok
+**Response** --- 200 Ok
 
 ```json
 {
@@ -110,14 +112,16 @@ Update an existing employee's information
 ### DELETE /api/employees/{id}
 
 Delete an existing employee
-**Response** 204 No Content
+
+**Response** --- 204 No Content
 
 ## Departments
 
 ### GET /api/departments
 
 Gets all departments from the database
-**Response** 200 Ok
+
+**Response** --- 200 Ok
 
 ```json
 [
@@ -144,7 +148,7 @@ Gets all departments from the database
 
 Gets a single department from the database
 
-**Response** 200 Ok
+**Response** --- 200 Ok
 
 ```json
 [
@@ -169,6 +173,7 @@ Gets a single department from the database
 ### POST /api/departments
 
 Add a new departments
+
 **Request Body**
 
 ```json
@@ -179,7 +184,7 @@ Add a new departments
 }
 ```
 
-**Response** 201 Created
+**Response** --- 201 Created
 
 ```json
 [
@@ -204,6 +209,7 @@ Add a new departments
 ### PUT /api/departments/{id}
 
 Update an existing department's information
+
 **Request Body**
 
 ```json
@@ -214,7 +220,7 @@ Update an existing department's information
 }
 ```
 
-**Response** 200 Ok
+**Response** --- 200 Ok
 
 ```json
 {
@@ -238,4 +244,4 @@ Update an existing department's information
 
 Delete an existing department
 
-**Response** 204 No Content
+**Response** 204 --- No Content
