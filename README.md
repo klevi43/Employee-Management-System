@@ -2,7 +2,9 @@
 
 ### Project Description
 
-This is a RestAPI made to perform CRUD operations on two entities: Employees and the Departments they work for.
+### Project Description
+
+A RESTful API built with ASP.NET Core and Entity Framework Core to manage Employees and Departments. Supports full CRUD operations on both entities, with each Department containing a list of its associated Employees.
 
 ### Technologies Used
 
@@ -152,59 +154,54 @@ Gets a single department from the database
 **Response** `200 Ok`
 
 ```json
-[
-    {
-        "id": number,
-        "name": "string",
-        "employees": [
-            {
-                "id": number,
-                "firstName": "string",
-                "lastName": "string",
-                "startDate": "yyyy-mm-dd",
-                "endDate": "yyyy-mm-dd",
-                "departmentId": number
-            },
-            ...
-        ]
-    }
-]
+{
+    "id": number,
+    "name": "string",
+    "employees": [
+           {
+            "id": number,
+            "firstName": "string",
+            "lastName": "string",
+            "startDate": "yyyy-mm-dd",
+            "endDate": "yyyy-mm-dd",
+            "departmentId": number
+        },
+        ...
+    ]
+}
 ```
 
 ### POST /api/departments
 
-Add a new departments
+Add a new department
 
 **Request Body**
 
 ```json
-
 {
-    "id": number,
-    "name": "string",
+  "name": "string"
 }
 ```
 
 **Response** `201 Created`
 
 ```json
-[
-    {
-        "id": number,
-        "name": "string",
-        "employees": [
-            {
-                "id": number,
-                "firstName": "string",
-                "lastName": "string",
-                "startDate": "yyyy-mm-dd",
-                "endDate": "yyyy-mm-dd",
-                "departmentId": number
-            },
-            ...
-        ]
-    }
-]
+
+{
+    "id": number,
+    "name": "string",
+    "employees": [
+        {
+            "id": number,
+            "firstName": "string",
+            "lastName": "string",
+            "startDate": "yyyy-mm-dd",
+            "endDate": "yyyy-mm-dd",
+            "departmentId": number
+        },
+        ...
+    ]
+}
 ```
 
 ### PUT /api/departments/{id}
