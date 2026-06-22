@@ -2,8 +2,6 @@
 
 ### Project Description
 
-### Project Description
-
 A RESTful API built with ASP.NET Core and Entity Framework Core to manage Employees and Departments. Supports full CRUD operations on both entities, with each Department containing a list of its associated Employees.
 
 ### Technologies Used
