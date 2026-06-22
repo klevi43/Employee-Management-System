@@ -42,6 +42,19 @@ namespace api.Controllers
             await _employeeRepository.SaveAsync(employeeModel);
             return CreatedAtAction(nameof(GetById), new { id = employeeModel.Id }, employeeModel.ToEmployeeDto());
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateById(int id, [FromBody] UpdateEmployeeRequestDto employeeRequestDto)
+        {
+            var employeeModel = employeeRequestDto.ToEmployeeFromUpdate();
+            var updatedEmployee = await _employeeRepository.UpdateAsync(id, employeeModel);
+            if (updatedEmployee == null)
+            {
+                return NotFound();
+            }
+            
+            return Ok(updatedEmployee.ToEmployeeDto());
+        }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteById(int id)
         {

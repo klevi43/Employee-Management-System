@@ -29,5 +29,16 @@ namespace api.Mappers
                 DepartmentId = employeeRequestDto.DepartmentId
             };
         }
+        public static Employee ToEmployeeFromUpdate(this UpdateEmployeeRequestDto employeeRequestDto)
+        {
+            return new Employee
+            {
+                FirstName = employeeRequestDto.FirstName,
+                LastName = employeeRequestDto.LastName,
+                StartDate = employeeRequestDto.StartDate,
+                EndDate = employeeRequestDto.EndDate,
+                DepartmentId = employeeRequestDto.DepartmentId
+            };
+        }
     }
 }

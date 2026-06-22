@@ -50,9 +50,21 @@ namespace api.Repositories
             return employee;
         }
 
-        public async Task<Employee?> UpdateAsync(int id, Employee entity)
+        public async Task<Employee?> UpdateAsync(int id, Employee employee)
         {
-           throw new NotImplementedException();
+            var existingEmployee = await _context.Employees.FirstOrDefaultAsync(e => e.Id == id);
+            if (existingEmployee == null)
+            {
+                return null;
+            }
+            existingEmployee.FirstName = employee.FirstName;
+            existingEmployee.LastName = employee.LastName;
+            existingEmployee.StartDate = employee.StartDate;
+            existingEmployee.EndDate = employee.EndDate;
+            existingEmployee.DepartmentId = employee.DepartmentId; 
+
+            await _context.SaveChangesAsync();
+            return existingEmployee;
         }
     }
 }

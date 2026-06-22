@@ -45,7 +45,7 @@ namespace api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateDepartmentRequestDto updateDepartmentRequestDto)
+        public async Task<IActionResult> UpdateById(int id, [FromBody] UpdateDepartmentRequestDto updateDepartmentRequestDto)
         {
             var departmentModel = updateDepartmentRequestDto.ToDepartmentFromUpdate();
             var updatedDepartment = await _departmentRepository.UpdateAsync(id, departmentModel);
